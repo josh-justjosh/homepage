@@ -54,25 +54,27 @@ jobs:
         echo ${{ steps.PtR.outcome }}
 
     - name: Commit files
-      if ${{ steps.PtR.outcome }} == 'success':
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add _data/raw/PtR.html
-          git add _data/raw/events.json
-          git add _data/raw/time.csv
-          git add _data/PtR.csv
-          git add _data/PtRtable.csv
-          git commit -m "Update parkrun Data [Bot]" -a
-      else:
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add _data/raw/events.json
-          git add _data/raw/time.csv
-          git add _data/PtR.csv
-          git add _data/PtRtable.csv
-          git commit -m "Update parkrun Data [Bot]" -a
+      if: ${{ steps.PtR.outcome == 'success'}}
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add _data/raw/PtR.html
+        git add _data/raw/events.json
+        git add _data/raw/time.csv
+        git add _data/PtR.csv
+        git add _data/PtRtable.csv
+        git commit -m "Update parkrun Data [Bot]" -a
+      
+    - name: Commit files (if PtR Failed)
+      if: ${{ steps.PtR.outcome != 'success'}}
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add _data/raw/events.json
+        git add _data/raw/time.csv
+        git add _data/PtR.csv
+        git add _data/PtRtable.csv
+        git commit -m "Update parkrun Data [Bot]" -a
         
     - name: Push changes
       uses: ad-m/github-push-action@master
