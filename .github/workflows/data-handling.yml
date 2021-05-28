@@ -51,7 +51,6 @@ jobs:
       run: |
         echo 'time' > _data/raw/time.csv
         echo ${{ steps.current-time.outputs.time }} >> _data/raw/time.csv
-        echo ${{ steps.PtR.outcome }}
 
     - name: Commit files
       if: ${{ steps.PtR.outcome == 'success'}}
