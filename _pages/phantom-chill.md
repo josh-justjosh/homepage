@@ -1,4 +1,5 @@
 ---
+layout: blank
 title: Phantom Chill
 permalink: /phantom-chill/
 ---
