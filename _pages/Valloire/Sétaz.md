@@ -1,7 +1,7 @@
 ---
 layout: blank
-title: Valloire Piste Opening
-permalink: /valloire/
+title: Valloire Sétaz
+permalink: /valloire/sétaz/
 ---
 <style>
 .Slopes {
@@ -10,8 +10,7 @@ permalink: /valloire/
 }
 
 .Slopes-resume {
-    display: flex;
-    margin: 5rem auto
+    display: none;
 }
 
 @media (max-width: 992px) {
@@ -21,8 +20,7 @@ permalink: /valloire/
 }
 
 .Slopes-resumeInner {
-    padding: 2rem;
-    margin-right: 5rem;
+    padding: 0.25rem 1rem 0;
     max-width: 90%
 }
 
@@ -44,15 +42,14 @@ permalink: /valloire/
 }
 
 .Slopes-resumeRemontee {
-    width: 25rem
+    width: 25rem;
 }
-
-.Slopes-listing {
-    margin-top: 10rem
+p.Slopes-resumeRemontee {
+    margin: 0.25rem 0;
 }
 
 .Slopes-secteur {
-    margin-bottom: 8rem;
+    margin-bottom: 0.25rem;
     flex-wrap: wrap;
     justify-content: space-between;
     display: flex
@@ -71,11 +68,10 @@ permalink: /valloire/
 
 .Slopes-secteurTitle {
     color: #000;
-    cursor: pointer;
     position: relative;
-    padding: 0 0 2rem 0;
+    padding: 0;
     border-bottom: .1rem solid rgba(0,0,0,.2);
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center
 }
@@ -147,7 +143,6 @@ permalink: /valloire/
     font-size: 1.7rem;
     font-weight: 400;
     border-bottom: 1px solid #eef1f6;
-    padding-bottom: 1rem
 }
 
 .Slopes-pisteIndic {
@@ -445,7 +440,7 @@ permalink: /valloire/
     font-weight: 600;
     display: block;
     margin: 0;
-    padding: 0 0 4rem 0
+    padding: 0 0 0.5rem 0
 }
 
 @media (max-width: 768px) {
@@ -495,7 +490,7 @@ permalink: /valloire/
 .Slopes-resumeTotal,.Slopes-resumePiste {
     color: #392F2F;
     margin: 0;
-    padding: 0 0 4rem 0
+    padding: 0 0 0.25rem 0
 }
 
 @media (max-width: 768px) {
@@ -559,6 +554,14 @@ permalink: /valloire/
     width: 1rem;
     height: 1rem;
     border-radius: 50%
+}
+.Slopes-secteurWrapper:nth-child(1),
+.Slopes-secteurWrapper:nth-child(3),
+.Slopes-secteurWrapper:nth-child(4),
+.Slopes-secteurWrapper:nth-child(5),
+.Slopes-secteurWrapper:nth-child(6),
+.Slopes-secteurWrapper:nth-child(7) {
+    display: none
 }
 </style>
 <script type="text/javascript" src="https://www.valloire.net/cms/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
