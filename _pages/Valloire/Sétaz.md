@@ -71,7 +71,7 @@ p.Slopes-resumeRemontee {
     position: relative;
     padding: 0;
     border-bottom: .1rem solid rgba(0,0,0,.2);
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center
 }
